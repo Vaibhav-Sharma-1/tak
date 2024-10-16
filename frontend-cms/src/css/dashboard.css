@@ -1,0 +1,35 @@
+/* src/pages/ProductsPage.css */
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    font-size: 1.5rem; /* Larger font for loading text */
+    color: #007bff; /* Bootstrap primary color */
+    font-weight: bold;
+  }
+  
+  .error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    color: #dc3545; /* Bootstrap danger color */
+    font-size: 1.2rem; /* Slightly larger font */
+  }
+  
+  .error-container h2 {
+    margin-bottom: 1rem; /* Space between title and message */
+  }
+  
+  .error-container p {
+    margin: 0; /* Remove default margin for the paragraph */
+  }
+  
+  .error-icon {
+    font-size: 3rem; /* Larger size for error icon */
+    margin-bottom: 1rem; /* Space between icon and text */
+  }
+  

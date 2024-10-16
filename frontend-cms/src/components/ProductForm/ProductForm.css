@@ -1,0 +1,133 @@
+.product-form-container {
+    width: 100%;
+    /* max-width: 600px; */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.product-form-container>h2 {
+    text-align: center;
+    color: #333;
+}
+
+.product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="file"] {
+    padding: 5px;
+}
+
+.image-preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.image-preview {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-btn {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+
+.error-container-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #dc3545;
+    font-size: .8rem;
+    margin:0 auto
+}
+
+.error-container-image h2 {
+    margin-bottom: 1rem;
+    font-weight: 150;
+    font-style: italic;
+    /* Space between title and message */
+}
+
+.error-container-image p {
+    margin: 0;
+    /* Remove default margin for the paragraph */
+}
+
+.error-icon-image {
+    font-size: 2rem;
+    /* Larger size for error icon */
+    margin-bottom: 1rem;
+    /* Space between icon and text */
+}
+
+.delete-btn, .delete-btn-header {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.delete-btn:hover, .delete-btn-header:hover {
+    background-color: #ff7875;
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}

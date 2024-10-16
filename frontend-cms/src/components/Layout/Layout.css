@@ -1,0 +1,19 @@
+/* src/components/Layout.css */
+.layout {
+    display: flex;
+  }
+  
+  .content {
+    margin-left: 250px; /* Leave space for the sidebar */
+    padding: 20px;
+    width: 100%;
+    transition: margin-left 0.3s ease;
+  }
+  
+  @media (max-width: 768px) {
+    .content {
+      margin-left: 0; /* No left margin on mobile */
+    }
+  }
+  
+  
