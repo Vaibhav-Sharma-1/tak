@@ -9,12 +9,13 @@ import { Input } from "@/components/ui/Input"
 import { Separator } from "@/components/ui/Separator"
 import Footer from '@/components/ui/Footer'
 import Header from '@/components/ui/Header'
+import { useRouter } from 'next/navigation'
 
-// Key to use for storing cart in localStorage
 const CART_STORAGE_KEY = 'cartItems'
 
 export default function CartPage() {
-    const [cartItems, setCartItems] = useState([])
+    const [cartItems, setCartItems] = useState([]);
+    const router = useRouter()
     const [count, setCount] = useState(0)
     useEffect(() => {
         const storedCart = localStorage.getItem(CART_STORAGE_KEY)
@@ -31,7 +32,7 @@ export default function CartPage() {
     }, [])
 
     const updateQuantity = (id, newQuantity) => {
-        console.log(newQuantity,id)
+        console.log(newQuantity, id)
         const items = cartItems.map(item =>
             item._id === id ? { ...item, quantity: Math.max(0, newQuantity) } : item
         )
@@ -42,18 +43,23 @@ export default function CartPage() {
     const removeItem = (id) => {
         const items = cartItems.filter(item => item._id !== id)
         setCartItems(items)
-        setCount(count-1)
+        setCount(count - 1)
         localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items))
 
     }
 
     const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0)
     const tax = subtotal * 0.1 // Assuming 10% tax
-    const total = subtotal + tax
+    const total = subtotal + tax;
+
+
+    const handleCheckout = () => {
+        router.push("/checkout")
+    }
 
     return (
         <div>
-            <Header count={count}/>
+            <Header count={count} />
             <div className="container mx-auto px-4 py-8">
                 <h1 className="text-3xl font-bold mb-8">Your Cart</h1>
                 <div className="grid md:grid-cols-3 gap-8">
@@ -136,7 +142,7 @@ export default function CartPage() {
                                 </div>
                             </CardContent>
                             <CardFooter>
-                                <Button className="w-full bg-black text-white">Proceed to Checkout</Button>
+                                <Button className="w-full bg-black text-white" onClick={handleCheckout}>Proceed to Checkout</Button>
                             </CardFooter>
                         </Card>
                     </div>
